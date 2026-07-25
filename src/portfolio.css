@@ -1,0 +1,40 @@
+/* Theme variables, keyframes, and hover/reveal rules for the portfolio.
+   Font (JetBrains Mono) is loaded via <link> in index.html. */
+
+.nvsite{--accent-base:#45E699;--accent:var(--accent-base);
+  --bg:#0C110E;--bg2:#101713;--ink:#D7E2DA;--ink2:rgba(215,226,218,0.62);--ink3:rgba(215,226,218,0.4);
+  --bright:#EDF5EF;--line:rgba(215,226,218,0.14);
+  --glow:color-mix(in srgb, var(--accent) 22%, transparent)}
+.nvsite[data-theme="light"]{--accent:color-mix(in oklab, var(--accent-base) 58%, black);
+  --bg:#F2F5F0;--bg2:#E9EFE8;--ink:#25332C;--ink2:rgba(28,46,37,0.68);--ink3:rgba(28,46,37,0.45);
+  --bright:#0F1B14;--line:rgba(22,42,32,0.18);
+  --glow:color-mix(in srgb, var(--accent) 18%, transparent)}
+.nvsite section[id]{scroll-margin-top:70px}
+@keyframes nv-blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+@keyframes nv-fadeup{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes nv-ping{0%{box-shadow:0 0 0 0 color-mix(in srgb, var(--accent) 50%, transparent)}75%{box-shadow:0 0 0 10px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.nv-fadein{opacity:0;animation:nv-fadeup .65s ease forwards}
+.nv-reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
+.nv-reveal.in{opacity:1;transform:none}
+.nv-draw{transform:scaleY(0);transform-origin:top;transition:transform 1.2s ease .15s}
+.nv-draw.in{transform:scaleY(1)}
+.nv-proj{border:1px solid var(--line);transition:border-color .3s ease,box-shadow .3s ease,transform .3s ease}
+.nv-proj:hover{border-color:var(--accent);box-shadow:0 0 26px var(--glow);transform:translateY(-3px)}
+.nv-gif{opacity:0;animation:nv-fadein .3s ease forwards}
+@keyframes nv-fadein{to{opacity:1}}
+.nv-link{color:var(--ink2);text-decoration:none;transition:color .2s}
+.nv-link:hover{color:var(--accent)}
+.nv-alink{color:var(--accent);text-decoration:none}
+.nv-alink:hover{text-decoration:underline}
+.nv-row{transition:background .2s}
+.nv-row:hover{background:color-mix(in srgb, var(--ink) 5%, transparent)}
+.nv-cta{font-size:14px;font-weight:700;color:var(--bg);background:var(--accent);padding:12px 22px;border-radius:6px;text-decoration:none;transition:filter .2s,transform .2s}
+.nv-cta:hover{filter:brightness(1.12);transform:translateY(-2px)}
+.nv-ghost{font-size:14px;color:var(--accent);border:1px solid color-mix(in srgb, var(--accent) 50%, transparent);padding:12px 22px;border-radius:6px;text-decoration:none;transition:border-color .2s,box-shadow .2s}
+.nv-ghost:hover{border-color:var(--accent);box-shadow:0 0 18px var(--glow)}
+.nv-mail:hover{text-shadow:0 0 24px var(--glow);text-decoration:underline}
+.nvsite a:focus-visible,.nvsite button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+@media (prefers-reduced-motion: reduce){
+  .nv-fadein,.nv-reveal,.nv-draw{animation:none!important;transition:none!important;opacity:1!important;transform:none!important}
+  .nv-cur{animation:none!important}
+}
