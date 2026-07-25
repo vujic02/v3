@@ -28,6 +28,12 @@
 .nv-alink:hover{text-decoration:underline}
 .nv-row{transition:background .2s}
 .nv-row:hover{background:color-mix(in srgb, var(--ink) 5%, transparent)}
+/* Narrow screens: 3-col row (560px min) can't fit a phone — stack to one column */
+@media (max-width:560px){
+  .nv-row{grid-template-columns:1fr!important;gap:4px!important}
+  .nv-row>span:last-child{justify-content:flex-start!important;margin-top:4px}
+  .nvsite main{padding-left:20px!important;padding-right:20px!important}
+}
 .nv-cta{font-size:14px;font-weight:700;color:var(--bg);background:var(--accent);padding:12px 22px;border-radius:6px;text-decoration:none;transition:filter .2s,transform .2s}
 .nv-cta:hover{filter:brightness(1.12);transform:translateY(-2px)}
 .nv-ghost{font-size:14px;color:var(--accent);border:1px solid color-mix(in srgb, var(--accent) 50%, transparent);padding:12px 22px;border-radius:6px;text-decoration:none;transition:border-color .2s,box-shadow .2s}
