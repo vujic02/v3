@@ -5,7 +5,7 @@ export const JOBS: Job[] = [
     hash: "a4f2c9e",
     dates: "oct 2024 → now",
     title: "full stack dev @ impleo solutions",
-    desc: "workforce management app · java 21, spring boot, mysql, hibernate, flyway, tailwind, aws s3, pdfbox",
+    desc: "workforce management app · react.js, java 21, spring boot, mysql, github actions, hibernate, flyway, tailwind, aws s3, pdfbox",
     head: true,
   },
   {
